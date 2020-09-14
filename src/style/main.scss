@@ -1,4 +1,9 @@
 @import 'base.scss';
- @import 'layout.scss';
- @import 'navigation.scss';
- @import 'header.scss';
+@import 'layout.scss';
+@import 'navigation.scss';
+@import 'header.scss';
+
+.sign-in {
+    grid-row: content-s/content-e;
+    grid-column: s/e;
+}
