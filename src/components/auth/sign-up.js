@@ -10,9 +10,9 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div className="sign-in">
-        <PageTitle className="sign-in-page-title" title="Register" />
-        <SignUpForm onSubmit={this.onSubmit} className="sign-in-form" />
+      <div className="sign-up">
+        <PageTitle className="sign-up-page-title" title="Register" />
+        <SignUpForm onSubmit={this.onSubmit} className="sign-up-form" />
       </div>
     );
   }
