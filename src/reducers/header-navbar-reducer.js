@@ -4,8 +4,22 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  headerLinks: [],
-  navbarLinks: [],
+  headerLinks: [
+    {
+      title: 'Hello'
+    },
+    {
+      title: 'Good Job!'
+    }
+  ],
+  navbarLinks: [
+    {
+      title: 'account'
+    },
+    {
+      title: 'purchases'
+    }
+  ],
 };
 
 export default function (state = INITIAL_STATE, action) {
