@@ -5,11 +5,11 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <img src="http://via.placeholder.com/50x50" />
-        <div>
+        <img  className='header-img' src="http://via.placeholder.com/50x50" />
+        <div className='header-links'>
         {this.props.headerLinks.map((link, index) => {
           return (
-            <a className="header-links" key={index}>
+            <a className="header-link" key={index}>
               {link.title}
             </a>
           );

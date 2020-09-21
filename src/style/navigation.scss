@@ -2,5 +2,25 @@
     grid-row: navbar-s/navbar-e;
     grid-column: 1/-1;
     background-color: #333;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2)
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+
+    display: grid;
+    grid-template-rows: [s] 1fr [e];
+    align-items: center;
+
+    justify-content: center;
+    grid-column-gap: 40px;
+
+    & > * {
+        grid-row: s/e;
+    }
+
+    .nav-link{
+        color: #E6E6E6;
+        font-size: 18px;
+    }
+
+    .green-text {
+        color: #00CB79 !important;
+    }
 }

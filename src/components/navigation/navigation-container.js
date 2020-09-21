@@ -7,7 +7,7 @@ class NavigationContainer extends Component {
       <div className="nav-wrapper">
         {this.props.navbarLinks.map((link, index) => {
           return (
-            <a className="nav-links" key={index}>
+            <a className= {`nav-link ${link.active ? 'green-text':''}`} key={index}>
               {link.title}
             </a>
           );
