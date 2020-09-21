@@ -1,3 +1,3 @@
-import { setHeaderLinks, setNavbarLinks } from "./header-navbar";
+import { setHeaderLinks, setNavbarLinks, changeNavbarActive } from "./header-navbar";
 
-export { setHeaderLinks, setNavbarLinks };
+export { setHeaderLinks, setNavbarLinks, changeNavbarActive };

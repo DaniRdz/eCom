@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import * as actions from "../../actions";
+
 class NavigationContainer extends Component {
   render() {
     return (
       <div className="nav-wrapper">
         {this.props.navbarLinks.map((link, index) => {
           return (
-            <a className= {`nav-link ${link.active ? 'green-text':''}`} key={index}>
+            <a
+              className={`nav-link ${link.active ? "green-text" : ""}`}
+              key={index}
+              onClick={() => this.props.changeNavbarActive(link.id)}
+            >
               {link.title}
             </a>
           );
@@ -23,6 +29,6 @@ function mapStateToProps(state) {
   };
 }
 
-NavigationContainer = connect(mapStateToProps)(NavigationContainer);
+NavigationContainer = connect(mapStateToProps, actions)(NavigationContainer);
 
 export default NavigationContainer;
