@@ -4,7 +4,7 @@ export default class PurchaseHistory extends Component {
     render() {
         return (
             <div>
-                
+                PurchaseHistory
             </div>
         );
     }
