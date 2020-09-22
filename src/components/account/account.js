@@ -17,13 +17,13 @@ class Account extends Component {
       {
         id: 0,
         title: "Purchase History",
-        active: false,
+        active: true,
         component: <PurchaseHistory />,
       },
       {
         id: 1,
         title: "Account Information",
-        active: true,
+        active: false,
         component: <AccountInformation />,
       },
     ];
@@ -43,7 +43,7 @@ class Account extends Component {
     return jsx;
   }
   render() {
-    return <div>{this.renderContent()}</div>;
+    return <div className="account-container">{this.renderContent()}</div>;
   }
 }
 function mapStateToProps(state) {
