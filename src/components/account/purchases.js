@@ -12,13 +12,20 @@ class Purchases extends Component {
 
     return (
       <div className={`${className} purchases`}>
-          {
-              this.props.purchases.map(purchase =>{
-                  return <div key={purchase.id} className='purchase'>
-                    <img className='purchase-img' src='http://via.placeholder.com/80x80'></img>
-                  </div>
-              })
-          }
+        {this.props.purchases.map((purchase) => {
+          return (
+            <a
+              key={purchase.id}
+              className="purchase"
+              onClick={() => this.props.setPurchaseDetail(purchase.id)}
+            >
+              <img
+                className="purchase-img"
+                src="http://via.placeholder.com/80x80"
+              ></img>
+            </a>
+          );
+        })}
       </div>
     );
   }

@@ -1,4 +1,11 @@
-import { SET_USER_PURCHASES } from "./types";
+import { SET_USER_PURCHASES, SET_PURCHASE_DETAIL } from "./types";
+
+export function setPurchaseDetail(id) {
+  return {
+    type: SET_PURCHASE_DETAIL,
+    payload: id,
+  };
+}
 
 export function fetchUserPurchases() {
   return {
@@ -17,7 +24,7 @@ export function fetchUserPurchases() {
       },
       {
         id: 1,
-        amount: 8.02,
+        amount: 9.02,
         orderNumber: "A0048248343",
         orderDate: new Date(),
         creditCard: "-0000",
@@ -28,7 +35,7 @@ export function fetchUserPurchases() {
       },
       {
         id: 2,
-        amount: 8.02,
+        amount: 7.02,
         orderNumber: "A0048248343",
         orderDate: new Date(),
         creditCard: "-0000",
@@ -39,7 +46,7 @@ export function fetchUserPurchases() {
       },
       {
         id: 3,
-        amount: 8.02,
+        amount: 12.02,
         orderNumber: "A0048248343",
         orderDate: new Date(),
         creditCard: "-0000",
@@ -50,7 +57,7 @@ export function fetchUserPurchases() {
       },
       {
         id: 4,
-        amount: 8.02,
+        amount: 4.02,
         orderNumber: "A0048248343",
         orderDate: new Date(),
         creditCard: "-0000",
@@ -61,7 +68,7 @@ export function fetchUserPurchases() {
       },
       {
         id: 5,
-        amount: 8.02,
+        amount: 15.02,
         orderNumber: "A0048248343",
         orderDate: new Date(),
         creditCard: "-0000",
@@ -72,7 +79,7 @@ export function fetchUserPurchases() {
       },
       {
         id: 6,
-        amount: 8.02,
+        amount: 56.02,
         orderNumber: "A0048248343",
         orderDate: new Date(),
         creditCard: "-0000",
@@ -83,7 +90,7 @@ export function fetchUserPurchases() {
       },
       {
         id: 7,
-        amount: 8.02,
+        amount: 12.02,
         orderNumber: "A0048248343",
         orderDate: new Date(),
         creditCard: "-0000",
