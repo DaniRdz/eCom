@@ -4,7 +4,19 @@
         border-bottom: 1px solid #cccccc;
     }
 
+    &-content{
+        margin: 37px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     &-border-bottom{
         border-bottom: 1px solid #f2f2f2;
+    }
+    &-purchases{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, 80px);
+        width: 360px;
     }
 }
