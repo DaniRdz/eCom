@@ -15,32 +15,35 @@ class PurchaseDetail extends Component {
     const { className, orderNumber, orderDate, user, amount, creditCard } = this.props;
     const { name, shippingAddress } = user;
     return (
-      <div className={`${className} purchases-detail`}>
+      <div className={`${className} purchase-detail`}>
         <PurchaseDetailLebel
-          className="purchase-detail-oreder-number"
+          className="purchase-detail-order-number"
           title="Order Number"
           value={orderNumber}
         />
         <PurchaseDetailLebel
-          className="purchase-detail-oreder-date"
+          className="purchase-detail-order-date"
           title="Order Date"
           value={orderDate}
         />
         <PurchaseDetailLebel
-          className="purchase-detail-oreder-shipping"
-          title="shipping Address"
+          className="purchase-detail-shipping-addresses"
+          title="Shipping Address"
           value={`${name}\n${shippingAddress}`}
         />
         <PurchaseDetailLebel
-          className="purchase-detail-oreder-total"
+          className="purchase-detail-total"
           title="Total"
           value={amount}
         />
         <PurchaseDetailLebel
-          className="purchase-detail-oreder-credit-card"
+          className="purchase-detail-credit-card"
           title="Credit Card"
           value={creditCard}
         />
+        <a className='purchase-detail-track-shipment'>Track Shipment</a>
+        <a className='purchase-detail-print-receipt'>Print Receipt</a>
+
       </div>
     );
   }
