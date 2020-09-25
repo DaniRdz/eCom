@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 
-import { FormInput, LongGrayButton } from "../form-fields";
+import { FormInput, FormButton, LongGrayButton } from "../form-fields";
 
 import history from "../../history";
 
@@ -65,6 +65,7 @@ class AccountInformationForm extends Component {
           name="zipcode"
           component={FormInput}
         />
+        <div className="account-information-form-line"></div>
         {this.state.showPasswords ? (
           [
             <Field
@@ -94,6 +95,25 @@ class AccountInformationForm extends Component {
               name="Confirm"
               component={FormInput}
             />,
+            <div key={3} className="account-information-form-buttons">
+              <Field
+                className="account-information-form-cancel"
+                onClick={() => this.setState({ showPasswords: false })}
+                type="button"
+                title="Cancel"
+                name="cancel"
+                short={true}
+                component={FormButton}
+              />
+              <Field
+                className="account-information-form-update-information"
+                onClick={() => this.setState({ showPasswords: false })}
+                type="submit"
+                title="Update Information"
+                name="update-information"
+                component={FormButton}
+              />
+            </div>,
           ]
         ) : (
           <Field
