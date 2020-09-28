@@ -1,8 +1,9 @@
-import { /* SET_SHOP_CATEGORIES */ } from "../actions/types";
-
+import /* SET_SHOP_CATEGORIES */ "../actions/types";
 
 const INITIAL_STATE = {
   categories: [],
+  selectCategoryId: 0,
+  productsSelected: [],
 };
 
 export default function (state = INITIAL_STATE, action) {
