@@ -7,16 +7,17 @@ class Shop extends Component {
   componentDidMount() {
     const headerLinks = [{ id: 1, title: "Login", path: "/" }];
     this.props.setHeaderLinks(headerLinks);
+    this.props.fetchShopCategories();
   }
   render() {
     return <div className="shop">Shop...</div>;
   }
 }
 
-function mapStateToprops(state) {
+function mapStateToProps(state) {
   return { state };
 }
 
-Shop = connect(mapStateToprops, actions)(Shop);
+Shop = connect(mapStateToProps, actions)(Shop);
 
 export default Shop;
