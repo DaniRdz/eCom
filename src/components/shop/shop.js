@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import ShopSearchBar from "./shop-searchbar";
+
 import * as actions from "../../actions";
 
 class Shop extends Component {
+  
+  onSubmit = (fields) => {
+    console.log(fields);
+  };
+
   componentDidMount() {
     const headerLinks = [{ id: 1, title: "Login", path: "/" }];
     this.props.setHeaderLinks(headerLinks);
@@ -21,6 +28,7 @@ class Shop extends Component {
   render() {
     return (
       <div className="shop">
+        <ShopSearchBar onSubmit={this.onSubmit} className="shop-search-bar" />
         <div className="shop-products">
           {this.props.filteredProducts.map((product) => {
             return (
