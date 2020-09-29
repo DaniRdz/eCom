@@ -8,6 +8,7 @@ class Shop extends Component {
     const headerLinks = [{ id: 1, title: "Login", path: "/" }];
     this.props.setHeaderLinks(headerLinks);
     this.props.fetchShopCategories();
+    this.props.fetchShopProducts();
   }
   render() {
     return <div className="shop">Shop...</div>;
