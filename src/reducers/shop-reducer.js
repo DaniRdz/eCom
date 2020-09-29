@@ -1,20 +1,27 @@
-import { /* SET_SHOP_CATEGORIES, */ SET_SHOP_PRODUCTS } from "../actions/types";
+import {
+  SET_SHOP_CATEGORIES,
+  SET_SHOP_PRODUCTS,
+  FILTER_PRODUCTS_WITH_CATEGORY_ID,
+} from "../actions/types";
 
 const INITIAL_STATE = {
   categories: [],
-  selectCategoryId: 0,
   productsSelected: [],
   praducts: [],
 };
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
-    /* case SET_SHOP_CATEGORIES:
+    case SET_SHOP_CATEGORIES:
       return {
         ...state,
         categories: action.payload,
       };
- */
+    case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+      console.log(action.payload);
+      return {
+        ...state,
+      };
     case SET_SHOP_PRODUCTS:
       return {
         ...state,

@@ -1,11 +1,20 @@
 import {
-  /* SET_SHOP_CATEGORIES, */ SET_NAVBAR_LINKS,
+  SET_SHOP_CATEGORIES,
+  SET_NAVBAR_LINKS,
   SET_SHOP_PRODUCTS,
+  FILTER_PRODUCTS_WITH_CATEGORY_ID,
 } from "./types";
+
+export function filterProductsWithCategoryId(id) {
+  return {
+    type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
+    payload: id,
+  };
+}
 
 export function fetchShopCategories() {
   return {
-    type: SET_NAVBAR_LINKS,
+    type: SET_SHOP_CATEGORIES,
     payload: [
       { id: 0, title: "All" },
       { id: 1, title: "JavaScript" },
