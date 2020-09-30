@@ -8,7 +8,7 @@ import * as actions from "../../actions";
 class Shop extends Component {
   
   onSubmit = (fields) => {
-    console.log(fields);
+    this.props.filterProductsWithQuery(fields)
   };
 
   componentDidMount() {
