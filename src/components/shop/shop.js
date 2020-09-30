@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import ShopSearchBar from "./shop-searchbar";
+import ShopProduct from "./shop-product";
 
 import * as actions from "../../actions";
 
 class Shop extends Component {
-  
   onSubmit = (fields) => {
-    this.props.filterProductsWithQuery(fields)
+    this.props.filterProductsWithQuery(fields);
   };
 
   componentDidMount() {
@@ -31,12 +31,7 @@ class Shop extends Component {
         <ShopSearchBar onSubmit={this.onSubmit} className="shop-search-bar" />
         <div className="shop-products">
           {this.props.filteredProducts.map((product) => {
-            return (
-              <div key={product.id} className="product">
-                <div className="product-title">{product.title}</div>
-                <div className="product-description">{product.description}</div>
-              </div>
-            );
+            return <ShopProduct {...product} key={product.id} />;
           })}
         </div>
       </div>
