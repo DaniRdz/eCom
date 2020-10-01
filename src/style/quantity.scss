@@ -1,11 +1,37 @@
 .quantity {
-    &-count {
 
+    display: grid;
+    grid-template-rows: [s] 21px [m] 21px [e];
+    grid-template-columns: [s] 65px [m] 29px [e];
+
+    &-count,
+    &-plus,
+    &-minus {
+        border: 1px solid #E6E6E6;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        height: 21px;
+        width: 29px;
+        grid-column: m/e;
+    }
+    
+    &-count {
+        grid-row: s/e;
+        grid-column: s/m;
+        height: 42px;
+        width: 65px;
+        border-radius: 3px 0 0 3px;
+        font-size: 23px;
+        color: #333;
     }
     &-plus {
+        border-radius: 0 3px 0 0;
+        grid-row: s/m;
 
     }
     &-minus {
-
+        border-radius: 0 0 3px 0;
+        grid-row: m/e;
     }
 }
