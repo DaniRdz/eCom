@@ -1,4 +1,50 @@
 .product {
+
+    display: grid;
+    grid-template-columns: 1/-1;
+    grid-template-columns: 1/-1;
+
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+
+    &-front,
+    &-back {
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+
+        backface-visibility: hidden;
+        transition: all 0.5s ease;
+    }
+
+    &-back {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &-front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &-back {
+        transform: rotateY(0deg);
+    }
+}
+
+.product-front {
+
+    height: 314px;
+    width: 240px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    &-title {
+        color: #333;
+        font-size: 18px;
+        font-family: 'Titillium Web';
+    }
+}
+
+.product-back {
     height: 314px;
     width: 240px;
     background-color: white;
