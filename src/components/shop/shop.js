@@ -3,10 +3,19 @@ import { connect } from "react-redux";
 
 import ShopSearchBar from "./shop-searchbar";
 import ShopProduct from "./shop-product";
+import ShopCart from "./shop-cart";
 
 import * as actions from "../../actions";
 
 class Shop extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      showCart: true,
+    };
+  }
+
   onSubmit = (fields) => {
     this.props.filterProductsWithQuery(fields);
   };
@@ -26,6 +35,7 @@ class Shop extends Component {
     return true;
   }
   render() {
+    return <ShopCart className="shop-cart" />;
     return (
       <div className="shop">
         <ShopSearchBar onSubmit={this.onSubmit} className="shop-search-bar" />
@@ -34,6 +44,8 @@ class Shop extends Component {
             return <ShopProduct {...product} key={product.id} />;
           })}
         </div>
+
+        {this.state.showCart ? <ShopCart className="shop-cart" /> : ""}
       </div>
     );
   }
