@@ -10,8 +10,19 @@ function CartButton(props) {
 }
 
 function CartContent(props) {
-  const { className } = props;
-  return <div className={`${className} cart-content`}>...content</div>;
+  const { className, products } = props;
+  let count = products.length;
+  return <div className={`${className} cart-content`}>
+      <div className='cart-content-title'>
+            Cart ({count})
+      </div>
+      <div className='cart-content-products'>
+           
+      </div>
+      <div className='cart-content-footer'>
+
+      </div>
+  </div>;
 }
 
 class ShopCart extends Component {
@@ -20,7 +31,7 @@ class ShopCart extends Component {
     return (
       <div className={`${className} cart`}>
         <CartButton className="shop-cart-toggle" icon="fas fa-times" />
-        <CartContent className="shop-cart-content" />
+        <CartContent className="shop-cart-content" products={[123, 12, 21, 3]} />
       </div>
     );
   }
