@@ -41,4 +41,44 @@
         font-family: 'Titillium Web';
         color: #E6E6E6;
     }
+
+    &-products {
+        display: grid;
+    }
+
+    &-footer {
+        display: grid;
+    }
+}
+
+.cart-footer {
+
+    &-checkout{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        
+        color: #ffffff;
+        font-size: 1.6rem;
+        font-weight: 600;
+        height: 38px;
+        width: 183px;
+        border-radius: 20px;
+        background-color: #00CB79;
+
+        transition: all .5s ease;
+
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            transform: scale(0.97);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
 }
