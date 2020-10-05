@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import CartProduct from "./cart-product";
+
 function CartButton(props) {
   const { className, icon } = props;
   return (
@@ -13,7 +15,7 @@ function CartContent(props) {
   const { className, products } = props;
   let count = products.length;
   let renderProducts = products.map((product) => {
-    return <h1 key={product}>{product}</h1>;
+    return <CartProduct key={product}/>;
   });
   return (
     <div className={`${className} cart-content`}>
