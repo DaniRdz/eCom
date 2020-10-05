@@ -18,7 +18,7 @@ function CartContent(props) {
   const { className, products } = props;
   let count = products.length;
   let renderProducts = products.map((product) => {
-    return <CartProduct key={product.id} />;
+    return <CartProduct {...product} key={product.id} />;
   });
   return (
     <div className={`${className} cart-content`}>
