@@ -1,9 +1,45 @@
-import { SET_USER_PURCHASES, SET_PURCHASE_DETAIL } from "./types";
+import {
+  SET_USER_PURCHASES,
+  SET_PURCHASE_DETAIL,
+  SET_CART_PRODUCTS,
+} from "./types";
 
 export function setPurchaseDetail(id) {
   return {
     type: SET_PURCHASE_DETAIL,
     payload: id,
+  };
+}
+
+export function setCartProducts() {
+  return {
+    type: SET_CART_PRODUCTS,
+    payload: [
+      {
+        id: 0,
+        product: {
+          id: 0,
+          title: "JavaScript in the Browser",
+          description:
+            "The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. ... The running speed starts slowly, but gets faster each minute after you hear this signal.",
+          price: 1.99,
+          belongsTo: [0, 1],
+        },
+        quantity: 2,
+      },
+      {
+        id: 1,
+        product: {
+          id: 1,
+          title: "Graph Database",
+          description:
+            "The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. ... The running speed starts slowly, but gets faster each minute after you hear this signal.",
+          price: 1.99,
+          belongsTo: [0, 6],
+        },
+        quantity: 1,
+      },
+    ],
   };
 }
 

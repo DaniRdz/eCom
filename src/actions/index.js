@@ -4,9 +4,14 @@ import {
   changeNavbarActive,
 } from "./header-navbar";
 
-import { fetchUserPurchases, setPurchaseDetail } from "./user";
+import { fetchUserPurchases, setPurchaseDetail, setCartProducts } from "./user";
 
-import { fetchShopCategories, fetchShopProducts , filterProductsWithCategoryId, filterProductsWithQuery} from "./shop";
+import {
+  fetchShopCategories,
+  fetchShopProducts,
+  filterProductsWithCategoryId,
+  filterProductsWithQuery,
+} from "./shop";
 
 export {
   setHeaderLinks,
@@ -14,8 +19,9 @@ export {
   changeNavbarActive,
   fetchUserPurchases,
   setPurchaseDetail,
+  setCartProducts,
   fetchShopCategories,
   fetchShopProducts,
   filterProductsWithCategoryId,
-  filterProductsWithQuery
+  filterProductsWithQuery,
 };
