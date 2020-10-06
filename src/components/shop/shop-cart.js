@@ -5,7 +5,7 @@ import CartProduct from "./cart-product";
 import CartButton from "./cart-button";
 
 import * as actions from "../../actions";
-
+import history from "../../history";
 
 function CartContent(props) {
   const { className, products } = props;
@@ -27,7 +27,12 @@ function CartFooter(props) {
   const price = 7.99;
   return (
     <div className={`${className} cart-footer`}>
-      <a className="cart-footer-checkout">Checkout</a>
+      <a
+        onClick={() => history.push("order/review")}
+        className="cart-footer-checkout"
+      >
+        Checkout
+      </a>
       <div className="cart-footer-subtotal">Subtotal</div>
       <div className="cart-footer-price">${price}</div>
     </div>
