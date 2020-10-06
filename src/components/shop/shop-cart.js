@@ -2,17 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import CartProduct from "./cart-product";
+import CartButton from "./cart-button";
 
 import * as actions from "../../actions";
 
-function CartButton(props) {
-  const { className, icon } = props;
-  return (
-    <div className={`${className} cart-button`}>
-      <i className={icon} />
-    </div>
-  );
-}
 
 function CartContent(props) {
   const { className, products } = props;
@@ -45,11 +38,26 @@ class ShopCart extends Component {
   componentDidMount() {
     this.props.setCartProducts();
   }
+
+  handleAddToCart = () => {
+    if (
+      document.getElementById("shop-cart").classList.contains("cart-hidden")
+    ) {
+      document.getElementById("shop-cart").classList.remove("cart-hidden");
+    } else {
+      document.getElementById("shop-cart").classList.add("cart-hidden");
+    }
+  };
+
   render() {
     const { className } = this.props;
     return (
-      <div className={`${className} cart`}>
-        <CartButton className="shop-cart-toggle" icon="fas fa-times" />
+      <div id="shop-cart" className={`${className} cart cart-hidden`}>
+        <CartButton
+          onClick={this.handleAddToCart}
+          className="shop-cart-toggle"
+          icon="fas fa-times"
+        />
         <CartContent
           className="shop-cart-content"
           products={this.props.cartProducts}

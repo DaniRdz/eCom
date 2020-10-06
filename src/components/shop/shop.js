@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ShopSearchBar from "./shop-searchbar";
 import ShopProduct from "./shop-product";
 import ShopCart from "./shop-cart";
+import CartButton from "./cart-button";
 
 import * as actions from "../../actions";
 
@@ -34,8 +35,17 @@ class Shop extends Component {
     }
     return true;
   }
+
+  handleAddToCart = () => {
+    if (
+      document.getElementById("shop-cart").classList.contains("cart-hidden")
+    ) {
+      document.getElementById("shop-cart").classList.remove("cart-hidden");
+    } else {
+      document.getElementById("shop-cart").classList.add("cart-hidden");
+    }
+  };
   render() {
-    return <ShopCart className="shop-cart" />;
     return (
       <div className="shop">
         <ShopSearchBar onSubmit={this.onSubmit} className="shop-search-bar" />
@@ -46,6 +56,11 @@ class Shop extends Component {
         </div>
 
         {this.state.showCart ? <ShopCart className="shop-cart" /> : ""}
+        <CartButton
+          className="shop-cart-button"
+          onClick={this.handleAddToCart}
+          icon={"fas fa-shopping-cart"}
+        />
       </div>
     );
   }
