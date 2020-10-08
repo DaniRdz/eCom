@@ -35,4 +35,40 @@
         grid-row: buttons-s/buttons-e;
         grid-column: back-s/back-e;
     }
+    &-details {
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        justify-self: end;
+        align-self: end;
+        transform: translateX(-40px) translateY(60px);
+        text-align: right;
+    }
+}
+
+.review-detail {
+    display: grid;
+    grid-template-columns: [title-s] 1fr [title-e] 35px [price-s] 1fr [price-e];
+    grid-template-rows: 1fr;
+    &-title {
+        grid-row: 1/-1;
+        grid-column: title-s/title-e;
+        font-size: 14px;
+
+    }
+
+    &-price {
+        grid-row: 1/-1;
+        grid-column: price-s/price-e;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.review-detail-green {
+    &-price,
+    &-title {
+        color: #00CB79;
+        font-weight: 600;
+        margin-top: 18px;
+    }
 }
