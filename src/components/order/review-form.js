@@ -8,7 +8,8 @@ import history from "../../history";
 
 class ReviewForm extends Component {
   render() {
-    const { className, handleSubmit } = this.props;
+    const { className, handleSubmit, subtotal } = this.props;
+    let tax = 0.16;
 
     return (
       <form onSubmit={handleSubmit} className={`${className}`}>
@@ -39,19 +40,23 @@ class ReviewForm extends Component {
         <div className="review-form-details review-details">
           <div className="review-details-subtotal review-detail">
             <div className="review-detail-title">Subtotal</div>
-            <div className="review-detail-price">$7.96</div>
+            <div className="review-detail-price">${subtotal}</div>
           </div>
           <div className="review-details-tax review-detail">
             <div className="review-detail-title">Tax</div>
-            <div className="review-detail-price">$0.16</div>
+            <div className="review-detail-price">${tax}</div>
           </div>
           <div className="review-details-shipping review-detail">
             <div className="review-detail-title">Shipping</div>
             <div className="review-detail-price">$0.00</div>
           </div>
           <div className="review-details-total review-detail review-detail-green">
-            <div className="review-detail-title review-detail-green-title">Total</div>
-            <div className="review-detail-price review-detail-green-title">$8.12</div>
+            <div className="review-detail-title review-detail-green-title">
+              Total
+            </div>
+            <div className="review-detail-price review-detail-green-title">
+              ${tax + subtotal}
+            </div>
           </div>
         </div>
       </form>
