@@ -1,0 +1,39 @@
+.review-product {
+    display: grid;
+    grid-template-columns: [img-s] 80px [img-e title-s] 1fr [title-e quantity-s] 1fr [quantity-e price-s] .5fr [price-e];
+    grid-template-rows: [s] 1fr [e];
+    column-gap: 30px;
+
+    & > * {
+        grid-row: s/e;
+        align-self: center;
+    }
+
+    &-img {
+        grid-column: img-s/img-e;
+
+    }
+
+    &-title {
+        grid-column: title-s/title-e;
+        font-size: 18px;
+        font-family: 'Titillium Web';
+        color: #333;
+    }
+
+    &-quantity {
+        grid-column: quantity-s/quantity-e;
+        font-size: 18px;
+        font-weight: 600;
+        color: #666666;
+
+
+    }
+
+    &-price {
+        grid-column: price-s/price-e;
+        justify-self: end;
+
+
+    }
+}
