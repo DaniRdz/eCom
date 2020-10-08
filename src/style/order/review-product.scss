@@ -1,6 +1,6 @@
 .review-product {
     display: grid;
-    grid-template-columns: [img-s] 80px [img-e title-s] 1fr [title-e quantity-s] 1fr [quantity-e price-s] .5fr [price-e];
+    grid-template-columns: [img-s] 80px [img-e title-s] 1fr [title-e quantity-s] 1fr [quantity-e price-s] .5fr [price-e] 40px;
     grid-template-rows: [s] 1fr [e];
     column-gap: 30px;
 
@@ -36,4 +36,31 @@
 
 
     }
+}
+
+.review-form-legend {
+
+    display: grid;
+    grid-template-columns: 80px [name-s] 1fr [name-e quantity-s] 1fr [quantity-e price-s] .5fr [price-e] 40px;
+    grid-template-rows: [s] 1fr [e];
+    column-gap: 30px;
+
+    & > * {
+        grid-row: s/e;
+        align-self: center;
+    }
+
+    &-name {
+        grid-column: name-s/name-e;
+    }
+
+    &-quantity {
+        grid-column: quantity-s/quantity-e;
+    }
+
+    &-price {
+        grid-column: price-s/price-e;
+        justify-self: end;
+    }
+
 }
