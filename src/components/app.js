@@ -8,6 +8,8 @@ import SignUp from "./auth/sign-up";
 import Account from "./account/account";
 import Shop from "./shop/shop";
 import Review from "./order/review";
+import Payment from "./information/payment";
+import Shipping from "./information/shipping";
 
 import history from "../history";
 
@@ -24,6 +26,8 @@ export default class App extends Component {
             <Route exact path="/account" component={Account} />
             <Route exact path="/shop" component={Shop} />
             <Route exact path="/order/review" component={Review} />
+            <Route exact path="/information/shipping" component={Shipping} />
+            <Route exact path="/information/payment" component={Payment} />
           </Switch>
         </Router>
       </div>
