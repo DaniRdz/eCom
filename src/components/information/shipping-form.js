@@ -11,7 +11,7 @@ class ShippingForm extends Component {
     return (
       <form onSubmit={handleSubmit} className={`${className}`}>
         <Field
-          className="sign-up-form-name"
+          className="shipping-form-name"
           type="name"
           title="Name"
           placeholder="Name"
@@ -19,7 +19,7 @@ class ShippingForm extends Component {
           component={FormInput}
         />
         <Field
-          className="sign-up-form-street"
+          className="shipping-form-street"
           type="street"
           title="Street Address"
           placeholder="Street Address"
@@ -27,7 +27,7 @@ class ShippingForm extends Component {
           component={FormInput}
         />
         <Field
-          className="sign-up-form-city"
+          className="shipping-form-city"
           type="city"
           title="City"
           placeholder="City"
@@ -35,7 +35,7 @@ class ShippingForm extends Component {
           component={FormInput}
         />
         <Field
-          className="sign-up-form-state"
+          className="shipping-form-state"
           type="state"
           title="State"
           placeholder="State"
@@ -43,16 +43,16 @@ class ShippingForm extends Component {
           component={FormInput}
         />
         <Field
-          className="sign-up-form-zipcode"
+          className="shipping-form-zipcode"
           type="zipcode"
           title="Zipcode"
           placeholder="Zipcode"
           name="zipcode"
           component={FormInput}
         />
-        <div className="sign-up-form-line"></div>
+        <div className="shipping-form-line"></div>
         <Field
-          className="sign-up-form-use-this"
+          className="shipping-form-use-this"
           onClick={() => history.push("/information/payment")}
           type="submit"
           title="Use This Address"
@@ -60,7 +60,7 @@ class ShippingForm extends Component {
           component={FormButton}
         />
         <Field
-          className="sign-up-form-back"
+          className="shipping-form-back"
           onClick={() => history.push("/order/review")}
           type="button"
           title="Back"

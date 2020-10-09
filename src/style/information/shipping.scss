@@ -1,0 +1,55 @@
+.shipping {
+    grid-row: content-s/content-e;
+    grid-column: s/e;
+}
+
+.shipping-form {
+    display: grid;
+    grid-template-rows: [name-s] 64px [name-e] 35px [street-s] 64px [street-e city-s] 64px [city-e state-zipcode-s] 64px [state-zipcode-e] minmax(20px, 81px) [line-s] 2px [line-e buttons-s] 38px [buttons-e];
+    grid-template-columns: [back-s] 137px [back-e space-s] 40px [space-e use-this-s] 1fr [use-this-e] 1fr;
+    grid-row-gap: 15px;
+
+    &-name {
+        grid-row: name-s/name-e;
+
+    }
+    &-street {
+        grid-row: street-s/street-e;
+
+    }
+    &-city {
+        grid-row: city-s/city-e;
+
+    }
+    &-zipcode,
+    &-state {
+        grid-row: state-zipcode-s/state-zipcode-e;
+        grid-column: back-s/back-e;
+        .input{
+            width: 200px;
+        }
+
+    }
+    &-zipcode {
+        transform: translateX(226px);
+
+    }
+    &-line {
+        grid-row: line-s/line-e;
+        grid-column: 1/-1;
+        border-top: 1px solid #ccc;
+        margin-bottom: 24px;
+
+    }
+    &-use-this {
+        grid-row: buttons-s/buttons-e;
+        grid-column: use-this-s/use-this-e;
+
+    }
+    &-back {
+        grid-row: buttons-s/buttons-e;
+        grid-column: back-s/back-e;
+
+
+    }
+}
