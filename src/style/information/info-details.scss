@@ -6,12 +6,46 @@
 
 .info-title {
 
+    display: grid;
+    grid-template-rows: [s] 1fr [e];
+    grid-template-columns: [s] 1fr [m] 1fr [e];
+
+
     &-title {
+        grid-row: s/e;
+        grid-column: s/m;
         font-size: 14px;
     }
     &-value {
+        grid-row: s/e;
+        grid-column: m/e;
         color: #00CB79;
         font-weight: 600;
         font-size: 18px;
     }
 }
+
+.info-title-green {
+    .info-title{
+        &-title{
+            font-weight: 600;
+            color: #00CB79;
+        }
+    }
+}
+
+.order-sumary {
+    width: 240px;
+    height: 150px;
+
+    display: grid;
+    grid-template-rows: 40px 24px 24px 46;
+    row-gap: 10px;
+
+    .info-title {
+        &-value {
+            justify-self: end;
+        }
+    }
+}
+
