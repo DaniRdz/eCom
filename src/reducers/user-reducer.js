@@ -3,9 +3,11 @@ import {
   SET_PURCHASE_DETAIL,
   SET_CART_PRODUCTS,
   ADD_CART_PRODUCT,
+  AUTHENTICATE_USER,
 } from "../actions/types";
 
 const INITIAL_STATE = {
+  user: {},
   cartProducts: [],
   purchases: [],
   purchaseDetail: {
@@ -23,6 +25,12 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
+    case AUTHENTICATE_USER:
+      const { user } = action.payload;
+      return {
+        ...state,
+        user,
+      };
     case ADD_CART_PRODUCT:
       var exists = false;
       const newCP = action.payload;
@@ -34,11 +42,11 @@ export default function (state = INITIAL_STATE, action) {
         }
         cartProducts.push(cartProduct);
       });
-      if ((exists == false)) {
+      if (exists == false) {
         cartProducts.push({
           id: state.cartProducts.length + 1,
           product: newCP,
-          quantity: 1
+          quantity: 1,
         });
       }
       return {
