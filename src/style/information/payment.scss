@@ -53,4 +53,26 @@
         grid-column: pay-complete-e/-1;
         justify-self: end;
     }
+    &-shipping-info {
+        grid-row: expiration-ccv-s;
+        grid-column: pay-complete-e/-1;
+        justify-self: end;
+    }
+} 
+.small-text {
+    font-size: 14px;
+}
+
+.shipping-info {
+    width: 240px;
+    height: 150px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 24px 24px 46px;
+    row-gap: 10px;
+
+    & > * {
+        grid-column: 1/-1;
+    }
 }

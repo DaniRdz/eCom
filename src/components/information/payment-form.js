@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 
 import { FormInput, FormButton } from "../form-fields";
-import OrderSummary from "./order-summary"
+import OrderSummary from "./order-summary";
 
 import history from "../../history";
+import { UnderlinedTitle } from "./info-details";
 
 class PaymentForm extends Component {
   render() {
@@ -62,6 +63,14 @@ class PaymentForm extends Component {
           component={FormButton}
         />
         <OrderSummary className="payment-form-summary" />
+        <div className="payment-form-shipping-info shipping-info">
+          <UnderlinedTitle
+            className="shipping-info-title"
+            title="Shipping To"
+          />
+          <div className="shipping-info-name small-text">Jordan Hudgens</div>
+          <div className="shippinh-info-address small-text">Address goes here 1234</div>
+        </div>
       </form>
     );
   }
